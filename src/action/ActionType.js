@@ -1,0 +1,2 @@
+export const GET_ALL_PRODUCTS='GET_ALL_PRODUCTS'
+export const ADDED_TO_CART='ADDED_TO_CART'
