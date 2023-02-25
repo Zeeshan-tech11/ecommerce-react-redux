@@ -1,7 +1,8 @@
-import { GET_ALL_PRODUCTS,ADDED_TO_CART } from "../action/ActionType";
+import { GET_ALL_PRODUCTS,ADDED_TO_CART,GET_ALL_CARTS ,ADDED_TO_DETAILS} from "../action/ActionType";
 let initialState={
     data:[],
-    cart:[]
+    cart:[],
+    detail:{}
 }
 
 export const ProductReducer=(state=initialState,action)=>{
@@ -13,6 +14,12 @@ switch (action.type) {
                 data:[...action.data],
             }
         )
+    case ADDED_TO_DETAILS:
+        return ({
+            ...state,
+            detail:action.detail
+        }
+        )
     case ADDED_TO_CART:
         return(
            {
@@ -20,7 +27,12 @@ switch (action.type) {
             cart:[action.cartData,...state.cart]
            }
         )       
-
+    case GET_ALL_CARTS:
+        return({
+           ...state,
+           cart:[...action.cart]
+        }
+        )
     default:
         return state;
 }

@@ -17,7 +17,7 @@ const firebaseConfig = {
  const app = initializeApp(firebaseConfig);
 export let db=getFirestore(app)
 const store=configureStore()
-console.log(store.getState());
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
