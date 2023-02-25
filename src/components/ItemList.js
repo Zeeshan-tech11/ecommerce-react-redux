@@ -24,7 +24,10 @@ function ItemList({item,id,isCart,...props}) {
       price,
       description,
     });
+    setDisable(true)
     await props.dispatch(getAllProducts())
+    window.alert('updated succesfully')
+    setDisable(false)
     setIndex(-1)
   }
   const handleCancel=(e)=>{
@@ -41,7 +44,8 @@ function ItemList({item,id,isCart,...props}) {
         window.alert('added to cart')
         await props.dispatch(getAllCarts())
     } catch (error) {
-        
+      window.alert('failed to  add to cart')
+
     }   
   }
   const handleDelete=async(e)=>{
@@ -49,8 +53,10 @@ function ItemList({item,id,isCart,...props}) {
   try {
     await deleteDoc(doc(db, "products", item.id));
     await props.dispatch(getAllProducts())
+    window.alert('deleted succesfully')
   } catch (error) {
-    
+    window.alert('failed to delete try after some time')
+
   }
   }
   const handleRemoveFromCart=async(e)=>{
@@ -60,8 +66,10 @@ function ItemList({item,id,isCart,...props}) {
       await deleteDoc(doc(db, "cart", item.id));
       setDisable(false)
       await props.dispatch(getAllCarts())
+      window.alert('succesfully removed from cart')
     } catch (error) {
-      
+      window.alert('failed to removed from cart')
+
     }
   }
   const handleDivClicked=async(item)=>{
@@ -74,7 +82,7 @@ function ItemList({item,id,isCart,...props}) {
     }
   }
   return (
-    <div style={{display:'flex',padding:'10px',justifyContent:'space-between',alignItems:'center'}}>
+    <div style={{display:'flex',padding:'10px',justifyContent:'space-between',alignItems:'center',boxShadow:'rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px'}}>
         <div style={{display:'flex',width:'40%'}} >
             <div style={{width:'100%',marginRight:'10px'}} onClick={()=>handleDivClicked(item)}>
             <img  src={item.img} width={'100%'} height={'200'}/>

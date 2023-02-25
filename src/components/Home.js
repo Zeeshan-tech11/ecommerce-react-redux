@@ -12,7 +12,7 @@ function Home(props) {
   }
   },[])
   return (
-    <div>
+    <div style={{backgroundColor:'ButtonShadow'}}>
       {props.Products?.data?.map((item,index)=>(
         <div key={index}>
           <ItemList item={item} id={index}/>

@@ -22,8 +22,8 @@ function AddProduct(props) {
         }   
     }
   return (
-    <div style={{width:'60%',backgroundColor:'red',margin:'auto'}}>
-        <div style={{backgroundColor:'green',display:'flex',justifyContent:'center'}}>
+    <div style={{width:'60%',backgroundColor:'skyblue',margin:'auto',marginTop:'40px',padding:'10px'}}>
+        <div style={{fontSize:'1.5rem',display:'flex',justifyContent:'center'}}>
             ADD PRODUCT
         </div>
         <div style={{margin:'10px',display:'flex',justifyContent:'center',alignItems:'center'}}>

@@ -9,7 +9,7 @@ function Cart(props) {
     },[])
     let data=props.Products.cart?props.Products.cart:[]
   return (
-    <div>
+    <div style={{backgroundColor:'InfoBackground',marginTop:'20px'}}>
       {data.map((item,index)=>(
         <div key={index}>
           <ItemList item={item} id={index} isCart={true}/>
